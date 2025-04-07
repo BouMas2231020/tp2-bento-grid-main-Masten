@@ -1,69 +1,126 @@
-# Frontend Mentor - Grille Bento
+# Frontend Mentor - Solution Grille Bento
 
-![Aperçu du design pour le défi de codage Grille Bento](preview.jpg)
+Il s'agit d'une solution pour le [défi Grille Bento sur Frontend Mentor](https://www.frontendmentor.io/challenges/bento-grid-RMydElrlOj). Les défis de Frontend Mentor vous aident à améliorer vos compétences en codage en construisant des projets réalistes.
 
-## Bienvenue ! 👋
+## Table des matières
 
-Merci d'accepté ce défi de codage front-end.
+- [Frontend Mentor - Solution Grille Bento](#frontend-mentor---solution-grille-bento)
+  - [Table des matières](#table-des-matières)
+  - [Aperçu](#aperçu)
+    - [Le défi](#le-défi)
+    - [Capture d'écran](#capture-décran)
+    - [Liens](#liens)
+  - [Mon processus](#mon-processus)
+    - [Technologies utilisées](#technologies-utilisées)
+    - [Ce que j'ai appris](#ce-que-jai-appris)
+    - [Développement continu](#développement-continu)
+    - [Ressources utiles](#ressources-utiles)
+  - [Auteur](#auteur)
+  - [Remerciements](#remerciements)
 
-Les défis de [Frontend Mentor](https://www.frontendmentor.io) vous aident à améliorer vos compétences en codage en construisant des projets réalistes.
 
-**Pour relever ce défi, vous devez avoir une bonne compréhension du HTML et du CSS.**
+## Aperçu
 
-## Le défi
+### Le défi
 
-Votre défi est de construire cette grille bento et de la rendre aussi proche que possible du design.
-
-Vous pouvez utiliser tous les outils que vous souhaitez pour vous aider à réaliser le défi. Si vous avez quelque chose que vous aimeriez pratiquer, n'hésitez pas à l'essayer.
-
-Vos utilisateurs doivent être capables de : 
+Les utilisateurs doivent être capables de :
 
 - Voir la mise en page optimale de l'interface en fonction de la taille de l'écran de leur appareil.
 
-Vous souhaitez du soutien pour le défi ? [Rejoignez notre communauté](https://www.frontendmentor.io/community) et posez vos questions dans le canal **#help**.
+### Capture d'écran
 
-### Comportement attendu
+![](assets/images/site.png)
 
-Les deux composants dans la colonne de gauche sur le bureau sont placés en bas sur mobile. C'est une excellente occasion de pratiquer vos compétences en placement avec CSS Grid.
+### Liens
 
-## Où trouver tout le nécessaire
+- URL de la solution : [Ajoutez l'URL de la solution ici](https://github.com/BouMas2231020/tp2-bento-grid-main-Masten)
 
-Votre tâche consiste à construire le projet selon les designs dans le dossier `/design`. Vous y trouverez à la fois une version mobile et une version bureau du design.
 
-Tous les assets nécessaires pour ce projet se trouvent dans le dossier `/assets`. Les images sont déjà exportées pour la taille d'écran correcte et optimisées.
+## Mon processus
 
-Nous incluons également des fichiers de polices variables et statiques pour les polices nécessaires à ce projet. Vous pouvez choisir de lier vers Google Fonts ou d'utiliser les fichiers de polices locaux pour héberger les polices vous-même.  
+### Technologies utilisées
 
-Il y a aussi un fichier `style-guide.md` contenant les informations nécessaires, comme la palette de couleurs et les polices.
+- Marquage HTML5 sémantique
+- Propriétés CSS personnalisées
+- CSS Grid
+- Workflow mobile-first 
 
-## Construire votre projet
 
-N'hésitez pas à utiliser tout flux de travail avec lequel vous vous sentez à l'aise. Voici un processus suggéré, mais ne vous sentez pas obligé de suivre ces étapes :
+### Ce que j'ai appris
 
-1. Initialisez votre projet en tant que dépôt public sur [GitHub](https://github.com/). Créer un dépôt facilitera le partage de votre code avec la communauté si vous avez besoin d'aide. Si vous ne savez pas comment faire cela, [lisez cette ressource Try Git](https://try.github.io/).
-2. Configurez votre dépôt pour publier votre code sur une adresse web. Cela sera également utile si vous avez besoin d'aide pendant le défi, car vous pourrez partager l'URL de votre projet avec l'URL de votre dépôt. Il existe plusieurs façons de faire cela, et nous vous donnons quelques recommandations ci-dessous.
-3. Examinez les designs pour commencer à planifier la manière dont vous allez aborder le projet. Cette étape est cruciale pour réfléchir aux classes CSS à créer pour des styles réutilisables.
-4. Avant d'ajouter des styles, structurez votre contenu avec HTML. Écrire d'abord votre HTML peut vous aider à vous concentrer sur la création d'un contenu bien structuré.
-5. Rédigez les styles de base pour votre projet, y compris les styles généraux du contenu, comme `font-family` et `font-size`.
-6. Commencez à ajouter des styles du haut de la page et travaillez vers le bas. Passez à la section suivante uniquement lorsque vous êtes satisfait de la section que vous venez de terminer.
 
-## Déployer votre projet
- 
-- [GitHub Pages](https://pages.github.com/) 
- 
 
-## Créez un `README.md` personnalisé
+```css
+.bento-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 13rem 13rem 13rem;
+    grid-template-areas: 
+        'column1 column2 column3'
+        'column1 column2 column3'
+        'column1 column4 column4'
+    ;
+    gap: 1rem;
+    max-width: 60rem;
+    margin-inline: auto;
+}
 
-Nous vous recommandons vivement de remplacer ce `README.md` par un personnalisé. Nous avons fourni un modèle dans le fichier [`README-template.md`](./README-template.md) dans ce code de démarrage.
+@media screen and (max-width: 950px) {
+    .bento-grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 13rem 13rem 13rem 13rem;
+        grid-template-areas: 
+            'column2 column3'
+            'column2 column3'
+            'column4 column4'
+            'column1 column1'
+        ;
+    }
 
-Le modèle fournit un guide sur ce que vous devez ajouter. Un `README` personnalisé vous aidera à expliquer votre projet et à réfléchir à vos apprentissages. N'hésitez pas à modifier notre modèle autant que vous le souhaitez.
+}
 
-Une fois que vous avez ajouté vos informations dans le modèle, supprimez ce fichier et renommez le fichier `README-template.md` en `README.md`. Cela le rendra visible comme le fichier README de votre dépôt.
+@media screen and (max-width: 650px) {
+    .bento-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 2rem;
+        grid-template-areas: 
+            'column2 '
+            'column3 '
+            'column4 '
+            'column1 '
+        ;
+    }
 
-## Soumettre votre solution (FACULTATIF)
+}
 
-Soumettez votre solution sur la plateforme pour que la communauté puisse la voir. Suivez notre ["Guide complet pour soumettre des solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) pour des conseils sur la manière de procéder. 
+```
 
-Ce défi est totalement gratuit. N'hésitez pas à le partager avec toute personne qui pourrait en bénéficier pour s'exercer.
+je suis fier de ce css, car je pense que c'est la partie la plus importante de ma compréhension du display: grid. le grid-template-columns: 1fr 2fr 1fr; permet d'avoir une premiere colonne qui occupe 1\4 de l'espace, un deuxieme colonne qui occupe 2\4 de l'espace et une derniere colonne qui occupe 1/4 de l'espace. et le grid-template-rows: 13rem 13rem 13rem; qui definie la taille des rangees et pour moi le plus important cette partie : 
 
-**Amusez-vous bien en construisant !** 🚀
+grid-template-areas: 
+        'column1 column2 column3'
+        'column1 column2 column3'
+        'column1 column4 column4'
+    ;
+
+Elle permet une grande fléxibilité de la dispostion des element comme dans l'exemple ou les rangees sont définies par les chaines de caractere a l'horizontale et les colonne par l'odre dans lequel a été écrit la chaine de caractère.
+
+
+
+### Développement continu
+
+comme dans le tp1 je pense que je devrais continuer à essayer d'améliorer mon organisation surtout dans le css. Je pense aussi que le display: grid; est un outil très puissant pour disposer les éléments qui peut être aussi utliser avec les flexbox donc je vais surement utiliser ces outils dans mes futurs projet.
+
+### Ressources utiles
+
+- [Exemple de ressource 1](https://www.youtube.com/watch?v=OzAc3eC6WQg&ab_channel=KimDoesCode) - Cela m'a aidé pour faire le projet. grace a cette vidéo j'ai vraiment compris le concept de grille et à qu'elle point peut etre utile dans les designs complexe.
+
+## Auteur
+
+- Auteur - [Masten Bournane]
+- Frontend Mentor - [BouMas2231020](https://github.com/BouMas2231020/tp2-bento-grid-main-Masten) 
+
+## Remerciements
+
+Comme je l'ai dis auparavant c'est la video KimDoesCode qui m'a aidé a réaliser ce projet.
